@@ -5,18 +5,27 @@ function getComputerChoice() {
     let randNum = Math.random();
 
     if (randNum <= .333) {
-        choice = 'Rock'
+        choice = 'Rock';
     }
     else if (randNum <= .666) {
-        choice = 'Paper'
+        choice = 'Paper';
     }
     else {
-        choice = 'Scissors'
+        choice = 'Scissors';
     }
     
     return choice;
 
   
+};
+
+
+function getHumanChoice() {
+    let choice = prompt('Rock, Paper, or Scissors?');
+
+    return choice;
+    
 }
 
-console.log(getComputerChoice());
+console.log(getHumanChoice())
+//console.log(getComputerChoice());  //Gets Computer Choice
