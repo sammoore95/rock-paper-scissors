@@ -8,13 +8,13 @@ function getComputerChoice() {
     let randNum = Math.random();
 
     if (randNum <= .333) {
-        choice = 'rock';
+        choice = "rock";
     }
     else if (randNum <= .666) {
-        choice = 'paper';
+        choice = "paper";
     }
     else {
-        choice = 'scissors';
+        choice = "scissors";
     }
     
     return choice;
@@ -23,7 +23,7 @@ function getComputerChoice() {
 computerChoice = getComputerChoice();
 
 function getHumanChoice() {
-    let choice = prompt('Rock, Paper, or Scissors?');
+    let choice = prompt("Rock, Paper, or Scissors?");
 
     return choice.toLowerCase();  
 };
@@ -34,11 +34,27 @@ humanChoice = getHumanChoice();
 //console.log(getComputerChoice());     //Gets Computer Choice
 
 function playRound(humanChoice, computerChoice){
-    if (humanChoice === computerChoice) {
+    if (humanChoice == computerChoice) {
         return "It's a tie!";
     }
-    
-    
+    else if (humanChoice == "rock" && computerChoice == "paper") {
+        return `You loose! Computer's ${computerChoice} beats your ${humanChoice}.`;
+    }
+    else if (humanChoice == "rock" && computerChoice == "scissors") {
+        return `You win! Your ${humanChoice} beats computers ${computerChoice}.`;
+    }
+    else if (humanChoice == "paper" && computerChoice == "rock") {
+        return `You win! Your ${humanChoice} beats computers ${computerChoice}.`;
+    }
+    else if (humanChoice == "paper" && computerChoice == "scissors") {
+        return `You loose! Computer's ${computerChoice} beats your ${humanChoice}.`;
+    }
+    else if (humanChoice == "scissors" && computerChoice == "rock") {
+        return `You loose! Computer's ${computerChoice} beats your ${humanChoice}.`;
+    }
+    else if (humanChoice == "scissors" && computerChoice == "paper") {
+        return `You win! Your ${humanChoice} beats computers ${computerChoice}.`;
+    }
 };
 
 
