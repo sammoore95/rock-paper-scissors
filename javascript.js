@@ -16,46 +16,70 @@ function getComputerChoice() {
     else {
         choice = "scissors";
     }
-    
-    return choice;
+    computerChoice = choice;
 };
-
-computerChoice = getComputerChoice();
 
 function getHumanChoice() {
     let choice = prompt("Rock, Paper, or Scissors?");
-
-    return choice.toLowerCase();  
+    humanChoice = choice.toLowerCase();  
 };
-
-humanChoice = getHumanChoice();
-
-//console.log(getHumanChoice())         //Gets Human Choice
-//console.log(getComputerChoice());     //Gets Computer Choice
 
 function playRound(humanChoice, computerChoice){
     if (humanChoice == computerChoice) {
         return "It's a tie!";
     }
     else if (humanChoice == "rock" && computerChoice == "paper") {
-        return `You loose! Computer's ${computerChoice} beats your ${humanChoice}.`;
+        computerScore++;
+        return `You loose! Computer's ${computerChoice} beats your ${humanChoice}. Score - You: ${humanScore}, Computer: ${computerScore}`;
     }
     else if (humanChoice == "rock" && computerChoice == "scissors") {
-        return `You win! Your ${humanChoice} beats computers ${computerChoice}.`;
+        humanScore++;
+        return `You win! Your ${humanChoice} beats computers ${computerChoice}. Score - You: ${humanScore}, Computer: ${computerScore}`;
     }
     else if (humanChoice == "paper" && computerChoice == "rock") {
-        return `You win! Your ${humanChoice} beats computers ${computerChoice}.`;
+        humanScore++;
+        return `You win! Your ${humanChoice} beats computers ${computerChoice}. Score - You: ${humanScore}, Computer: ${computerScore}`;
     }
     else if (humanChoice == "paper" && computerChoice == "scissors") {
-        return `You loose! Computer's ${computerChoice} beats your ${humanChoice}.`;
+        computerScore++;
+        return `You loose! Computer's ${computerChoice} beats your ${humanChoice}. Score - You: ${humanScore}, Computer: ${computerScore}`;
     }
     else if (humanChoice == "scissors" && computerChoice == "rock") {
-        return `You loose! Computer's ${computerChoice} beats your ${humanChoice}.`;
+        computerScore++;
+        return `You loose! Computer's ${computerChoice} beats your ${humanChoice}. Score - You: ${humanScore}, Computer: ${computerScore}`;
     }
     else if (humanChoice == "scissors" && computerChoice == "paper") {
-        return `You win! Your ${humanChoice} beats computers ${computerChoice}.`;
+        humanScore++;
+        return `You win! Your ${humanChoice} beats computers ${computerChoice}. Score - You: ${humanScore}, Computer: ${computerScore}`;
     }
 };
 
+function playGame(){
+    getComputerChoice();
+    getHumanChoice();
+    console.log(playRound(humanChoice, computerChoice));
+    getComputerChoice();
+    getHumanChoice();
+    console.log(playRound(humanChoice, computerChoice));
+    getComputerChoice();
+    getHumanChoice();
+    console.log(playRound(humanChoice, computerChoice));
+    getComputerChoice();
+    getHumanChoice();
+    console.log(playRound(humanChoice, computerChoice));
+    getComputerChoice();
+    getHumanChoice();
+    console.log(playRound(humanChoice, computerChoice));
+    if (humanScore === computerScore) {
+        console.log("The game is a tie!");
+    }
+    else if (humanScore > computerScore) {
+        console.log("You win the game!")
+    }
+    else if (humanScore < computerScore) {
+        console.log("You loose the game :(")
+    }
+};
 
-console.log(playRound(humanChoice, computerChoice));
+playGame();
+
