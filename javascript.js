@@ -1,31 +1,45 @@
-console.log('Hello World');
+let humanChoice = '';
+let computerChoice = '';
+let humanScore = 0;
+let computerScore = 0;
 
 function getComputerChoice() {
     let choice = '';
     let randNum = Math.random();
 
     if (randNum <= .333) {
-        choice = 'Rock';
+        choice = 'rock';
     }
     else if (randNum <= .666) {
-        choice = 'Paper';
+        choice = 'paper';
     }
     else {
-        choice = 'Scissors';
+        choice = 'scissors';
     }
     
     return choice;
-
-  
 };
 
+computerChoice = getComputerChoice();
 
 function getHumanChoice() {
     let choice = prompt('Rock, Paper, or Scissors?');
 
-    return choice;
-    
-}
+    return choice.toLowerCase();  
+};
 
-console.log(getHumanChoice())
-//console.log(getComputerChoice());  //Gets Computer Choice
+humanChoice = getHumanChoice();
+
+//console.log(getHumanChoice())         //Gets Human Choice
+//console.log(getComputerChoice());     //Gets Computer Choice
+
+function playRound(humanChoice, computerChoice){
+    if (humanChoice === computerChoice) {
+        return "It's a tie!";
+    }
+    
+    
+};
+
+
+console.log(playRound(humanChoice, computerChoice));
