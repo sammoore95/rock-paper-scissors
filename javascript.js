@@ -19,10 +19,10 @@ function getComputerChoice() {
     computerChoice = choice;
 };
 
-function getHumanChoice() {
-    let choice = prompt("Rock, Paper, or Scissors?");
-    humanChoice = choice.toLowerCase();  
-};
+// function getHumanChoice() {
+//     let choice = prompt("Rock, Paper, or Scissors?");
+//     humanChoice = choice.toLowerCase();  
+// };
 
 function playRound(humanChoice, computerChoice){
     if (humanChoice == computerChoice) {
@@ -54,22 +54,24 @@ function playRound(humanChoice, computerChoice){
     }
 };
 
+
+
 function playGame(){
-    getComputerChoice();
-    getHumanChoice();
-    console.log(playRound(humanChoice, computerChoice));
-    getComputerChoice();
-    getHumanChoice();
-    console.log(playRound(humanChoice, computerChoice));
-    getComputerChoice();
-    getHumanChoice();
-    console.log(playRound(humanChoice, computerChoice));
-    getComputerChoice();
-    getHumanChoice();
-    console.log(playRound(humanChoice, computerChoice));
-    getComputerChoice();
-    getHumanChoice();
-    console.log(playRound(humanChoice, computerChoice));
+    // getComputerChoice();
+    // getHumanChoice();
+    // console.log(playRound(humanChoice, computerChoice));
+    // getComputerChoice();
+    // getHumanChoice();
+    // console.log(playRound(humanChoice, computerChoice));
+    // getComputerChoice();
+    // getHumanChoice();
+    // console.log(playRound(humanChoice, computerChoice));
+    // getComputerChoice();
+    // getHumanChoice();
+    // console.log(playRound(humanChoice, computerChoice));
+    // getComputerChoice();
+    // getHumanChoice();
+    // console.log(playRound(humanChoice, computerChoice));
     if (humanScore === computerScore) {
         console.log("The game is a tie!");
     }
